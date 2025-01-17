@@ -8,4 +8,5 @@ To use this script you only must execute the next commands.
 ``chmod +x lsdap.sh``
 
 ``sudo ./lsdap.sh``
+
 Now just follow the steps provided within the script.
