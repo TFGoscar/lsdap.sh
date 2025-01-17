@@ -51,6 +51,7 @@
         touch ./lsdap/data.conf
         wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/ou.sh" -O "./lsdap/ou.sh"
         wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/grp.sh" -O "./lsdap/grp.sh"
+        wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/pablo.sh" -O "./lsdap/pablo.sh"
 
         chmod 755 ./lsdap
         chmod 755 ./lsdap/*
