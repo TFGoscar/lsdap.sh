@@ -205,7 +205,7 @@ homeDirectory: /home/jlopez
 
 
         fi
-        clear
+    
         
     elif [ "$option" = "r" ];then
         # RECONFIGURE
