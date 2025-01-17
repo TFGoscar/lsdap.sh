@@ -48,7 +48,7 @@
         mkdir ./lsdap
         touch ./lsdap/file.ldif
         touch ./lsdap/data.conf
-        wget https://github.com/TFGoscar/lsdap.sh/blob/main/ou.sh -O "./lsdap/ou.sh"
+        wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/ou.sh" -O "./lsdap/ou.sh"
 
 
         chmod 755 ./lsdap
