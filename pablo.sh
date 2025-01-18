@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo ""
 if [ $(id -u) -ne 0 ]
 then
 	echo "get-ldap: Permission denied."
@@ -109,8 +109,8 @@ function getLdap()
 #obtengo el nombre del dominio con las lineas de slapcat que empiezan por dn: dc=
 #emtubo para invertir la búsqueda y que no aparezca nodomain por si acaso
 dominio=$(slapcat | grep "^dn: dc=" | grep -v "nodomain" | sed 's/dn: //g')
-echo ""
-echo "----------------------"
+
+echo "---------------------"
 
 #obtengo todas las unidades organizativas del dominio, formateándolas con grep y sed para quedarme con el dn limpio
 unidades=$(ldapsearch -xLLL -b "$dominio" objectClass=organizationalUnit ou | grep "^ou: " | sed 's/ou: //g')
@@ -122,5 +122,5 @@ for unidad in $unidades
 {
 	getLdap $unidad 1
 }
-echo "----------------------"
+echo "---------------------"
 echo ""
