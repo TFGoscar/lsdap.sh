@@ -44,8 +44,9 @@
             fi
         done
         read -p "- FQDN (server.domain.topleveldomain) --> " fqdn
+        dc2=$(echo "$fqdn" | awk -F'.' '{print $3}')
         while [ "$dc2" = "" ]; do
-            dc2=$(echo "$dc2" | awk -F'.' '{print $3}')
+            dc2=$(echo "$fqdn" | awk -F'.' '{print $3}')
             echo ""
             echo "[!] INVALID FORMAT TRY AGAIN [!]"
             read -p "- FQDN (server.domain.topleveldomain) --> " fqdn
