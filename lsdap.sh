@@ -43,10 +43,12 @@
                 sleep 0.5
             fi
         done
+        read -p "- FQDN (server.domain.topleveldomain) --> " fqdn
         while [ "$dc2" = "" ]; do
-            dc2=$(echo "$dc2" | awk -F'-' '{print $3}')
+            dc2=$(echo "$dc2" | awk -F'.' '{print $3}')
+            echo ""
+            echo "[!] INVALID FORMAT TRY AGAIN [!]"
             read -p "- FQDN (server.domain.topleveldomain) --> " fqdn
-            echo "fqdn=$fqdn" >> ./lsdap/data.conf
 
         done
 
