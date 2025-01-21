@@ -23,7 +23,6 @@ function mostrarUnidades() {
             done
         fi
 
-        echo "--------------"
     done
     echo ""
     # Limpiar el archivo temporal de patrones
@@ -35,3 +34,4 @@ unidades=$(slapcat | grep "^dn: ou=" | sed 's/^dn: //g' | grep -v ",ou=")
 
 # Procesar las unidades organizativas principales
 mostrarUnidades $unidades
+echo "--------------"
