@@ -21,6 +21,7 @@ function mostrarUnidades() {
             for sub in $subunidades; do
                 echo "   -$sub"
             done
+            echo ""
         fi
 
     done
