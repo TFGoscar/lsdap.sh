@@ -1,7 +1,8 @@
 #!/bin/bash
+dc1=$(cat ./lsdap/data.conf | grep "fqdn" | awk -F '=' '{print $2}' | awk -F '.' '{print $2}')
+dc2=$(cat ./lsdap/data.conf | grep "fqdn" | awk -F '=' '{print $2}' | awk -F '.' '{print $3}')
 
-
-groups=$(ldapsearch -xLLL -b "dc=midominio11,dc=local" objectClass=posixGroup | grep cn: | awk '{print $2}')
+groups=$(ldapsearch -xLLL -b "dc=$dc1,dc=$dc2" objectClass=posixGroup | grep cn: | awk '{print $2}')
 echo -e "[Name]                        [GID]"
 
 for i in $groups
