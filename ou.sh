@@ -25,7 +25,6 @@ function mostrarUnidades() {
         fi
 
     done
-    echo ""
     # Limpiar el archivo temporal de patrones
     rm patron
 }
