@@ -105,8 +105,11 @@ until [ "$option" = "e" ]; do
     (u) --> Create a new User.
     (o) --> Create a new Organizational Unit.
     (g) --> Create a new Grupe.
-    (rm) --> Delete a objet.
     (s) --> Search objects in LDAP domain.
+    (rm) --> Delete an objet.
+    (md) --> Modify an object
+    (mv) --> Move an object
+
     (r) --> Reconfigure script.
     (e) --> Exit.
 
@@ -448,5 +451,23 @@ until [ "$option" = "e" ]; do
             fi
                 
         done
+    elif [ "$option" = "md" ] || [ "$option" = "MD" ]; then
+         echo ""
+        echo -n "[-   What do you want to modify?   -]"
+        echo ""
+        echo "  (1) - User."  
+        echo "  (2) - Group"
+        echo "  (3) - Ou"
+        echo "  (e) - Go Back."
+        echo ""
+        read -p "[#] Choose your option --> " modifychoption
+        echo ""
+
+    
+    
+    elif [ "$option" = "mv" ] || [ "$option" = "MV" ]; then
+        echo ""
+
+
     fi
 done
