@@ -153,7 +153,7 @@ until [ "$option" = "e" ]; do
             echo "objectClass: inetOrgPerson" >> ./lsdap/file.ldif
             echo "objectClass: posixAccount" >> ./lsdap/file.ldif
             echo "objectClass: shadowAccount" >> ./lsdap/file.ldif
-            echo "uid: $userid" >> ./lsdap/file.ldif
+            echo "uid: $username" >> ./lsdap/file.ldif
             echo "sn: $usersn" >> ./lsdap/file.ldif
             echo "givenName: $givenname" >> ./lsdap/file.ldif
             echo "cn: $username" >> ./lsdap/file.ldif
