@@ -233,6 +233,7 @@ until [ "$option" = "e" ]; do
                 echo ""
                 echo "COMMAND --> ldapadd -x -D cn=admin,dc=$dc1,dc=$dc2 -W -f ./lsdap/file.ldif"
                 echo "[#] cn=$username$ou2$ou1,dc=$dc1,dc=$dc2 has been created [#]"
+                useradd -u $userid -g $usergrougid $username
                 echo ""
                 read -p "Press enter to continue" x
             fi
@@ -298,6 +299,7 @@ until [ "$option" = "e" ]; do
             echo ""
             echo "COMMAND --> ldapadd -x -D cn=admin,dc=$dc1,dc=$dc2 -W -f ./lsdap/file.ldif"
             echo "[#] cn=$groupname$ou2$ou1,dc=$dc1,dc=$dc2 has been created [#]"
+            groupadd -g $groupgid $groupname
             echo "" 
             read -p "Press enter to continue" x
         fi
