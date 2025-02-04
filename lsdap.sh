@@ -87,7 +87,7 @@
             # Unicamente sirve para el usuario, crear otros bucles para cada pregunta
             until [ "$userexist" = "true" ]; do
             read -p "- Name of a non root regular sytem user --> " user
-                checkuser=$(awk -F ':' '$3 > 999 ' /etc/passwd | awk -F ':' '$3 < 65534'| awk -F ':' '{print $1}' | grep $user)
+                checkuser=$(awk -F ':' '$3 > 999 ' /etc/passwd | awk -F ':' '$3 < 65534'| awk -F ':' '{print $1}' | grep ":$user.")
                 if [ "$checkuser" = "$user" ]; then
                     userexist="true"
 
