@@ -6,15 +6,15 @@
         echo ""
         exit
     fi
-
-	echo "[!] You are going to uninstall lsdap [!]" confirmation
-	read -p "Are you sure?(Y/N)"
+	echo ""
+	echo "[!] You are one step to uninstall lsdap [!]" confirmation
+	read -p "Are you sure?(Y/N) --> " confirmation
 		if [ "$confirmation" = "Y" ] || [ "$confirmation" = "y" ]; then
 			rm -r /etc/lsdap
 			rm /usr/bin/lsdnew
 			rm /usr/bin/lsdget			
 			rm /usr/bin/lsduninstall
-		echo "e"
+		echo "Unistalled"
 		else 
 			echo "[#] ABORTING [#]"
         fi
