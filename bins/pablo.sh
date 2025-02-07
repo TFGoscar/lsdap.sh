@@ -6,13 +6,13 @@ then
 	echo "get-ldap: Permission denied."
 	exit 2
 fi
-if [ $1 -eq "-g" ]; then
+if [ $2 -eq "-g" ]; then
 	/etc/bins/grp.sh
 	exit
-elif [ $1 -eq "-u" ]; then
+elif [ $2 -eq "-u" ]; then
 	/etc/bins/usr.sh
 	exit
-elif [ $1 -eq "-ou" ]; then
+elif [ $2 -eq "-ou" ]; then
 	/etc/bins/ou.sh
 	exit
 
