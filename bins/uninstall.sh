@@ -7,7 +7,7 @@
         exit
     fi
 	echo ""
-	echo "[!] You are one step to uninstall lsdap [!]" confirmation
+	echo "[!] You are one step to uninstall lsdap [!]" 
 	read -p "Are you sure?(Y/N) --> " confirmation
 		if [ "$confirmation" = "Y" ] || [ "$confirmation" = "y" ]; then
 			rm -r /etc/lsdap
