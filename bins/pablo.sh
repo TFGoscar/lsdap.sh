@@ -6,7 +6,17 @@ then
 	echo "get-ldap: Permission denied."
 	exit 2
 fi
+if [ $1 -eq "-g" ]; then
+	/etc/bins/grp.sh
+	exit
+elif [ $1 -eq "-u" ]; then
+	/etc/bins/usr.sh
+	exit
+elif [ $1 -eq "-ou" ]; then
+	/etc/bins/ou.sh
+	exit
 
+fi
 #función que añade espacios sin saltar de línea
 #se usa para 'tabular' los objetos que se van mostrando por pantalla, con el fin de mostrar la lista de forma más clara
 #$1 número de espacios que queremos añadir a la línea
