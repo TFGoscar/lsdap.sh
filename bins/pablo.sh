@@ -98,28 +98,14 @@ function getLdap()
 	#si recibe -u, muestra los usuarios de las unidades de forma recursiva
 	elif [ "$3" = "-u" ]
 	then
-		#añado espacios con el valor de $2, llamando a la función formatoEsp y, seguido, muestro el nombre de la unidad ($1)
-		echo "$(formatoEsp $2)-$1 (ou)"
-		#USUARIOS, llamada a la función getUsuarios
-		getUsuarios $dnUnidad $2
-		#SUB UNIDADES ORGANIZATIVAS, llamada a la función getUnidades
-		getUnidades $dnUnidad $2 $3
+		/etc/lsdap/bins/usr.sh
 	#si recibe -g, muestra los grupos de las unidades de forma recursiva
 	elif [ "$3" = "-g" ]
 	then
-		#añado espacios con el valor de $2, llamando a la función formatoEsp y, seguido, muestro el nombre de la unidad ($1)
-		echo "$(formatoEsp $2)-$1 (ou)"
-		#GRUPOS, llamada a la función getGrupos
-		getGrupos $dnUnidad $2
-		#SUB UNIDADES ORGANIZATIVAS, llamada a la función getUnidades
-		getUnidades $dnUnidad $2 $3
-	#si recibe -o, muestra solo las sub unidades de las unidades de forma recursiva
+		/etc/lsdap/bins/grp.sh
 	elif [ "$3" = "-o" ]
 	then
-		#añado espacios con el valor de $2, llamando a la función formatoEsp y, seguido, muestro el nombre de la unidad ($1)
-		echo "$(formatoEsp $2)-$1 (ou)"
-		#SUB UNIDADES ORGANIZATIVAS, llamada a la función getUnidades
-		getUnidades $dnUnidad $2 $3
+		/etc/lsdap/bins/ou.sh
 	#en cualquier otro caso, error en el primer parámetro del script, que es el tercero en la función getLdap()
 	else
 		echo "Error en parámetros."
