@@ -123,7 +123,7 @@ ${endcolor}\n"
 
         elif [ "$configmode" = "s" ]; then
 
-            read -p "[+] ¿Do you want to start a LDAP Domain instalation on this host?(y/n)" installoption
+            read -p "[+] ¿Do you want to start a LDAP Domain instalation on this host?(y/n) --> " installoption
             configmode=$(echo $installoption | tr '[:upper:]' '[:lower:]')
             if [ $installoption = "y" ]; then
                 sudo apt-get install slapd ldap-utils -y
