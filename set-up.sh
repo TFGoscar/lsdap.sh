@@ -161,8 +161,8 @@ ${endcolor}\n"
             ln -s /etc/lsdap/bins/new-lsdap.sh /usr/bin/lsdnew
             ln -s /etc/lsdap/bins/uninstall-lsdap.sh /usr/bin/lsduninstall
             
-            chmod 700 /etc/lsdap/*
-            chmod 700 /etc/lsdap/bins/*
+            chmod 755 /etc/lsdap/*
+            chmod 755 /etc/lsdap/bins/*
 
             echo "fqdn=$fqdn" >> /etc/lsdap/data.conf
             echo "lastuid=5000" >> /etc/lsdap/data.conf
