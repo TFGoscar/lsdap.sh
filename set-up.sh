@@ -123,6 +123,12 @@ ${endcolor}\n"
 
         elif [ "$configmode" = "s" ]; then
 
+            read -p "[+] ¿Do you want to start a LDAP Domain instalation on this host?(y/n)" installoption
+            configmode=$(echo $installoption | tr '[:upper:]' '[:lower:]')
+            if [ $installoption = "y" ]; then
+                sudo apt-get install slapd ldap-utils -y
+            fi
+            
             servername=$(cat /etc/hostname)
             fqdn0=$(slapcat | grep "^dn: dc=" | grep -v "nodomain" | sed 's/dn: //g' | sed 's/,dc=/./g' | sed 's/dc=//g')
             fqdn="$servername.$fqdn0"
@@ -140,15 +146,9 @@ ${endcolor}\n"
                 ldapsearch -D "cn=admin,dc=$dc1,dc=$dc2" -w "$ldappassword" 2>/tmp/test 1>/dev/null
                 comprobacionldaps=$(cat /tmp/test | awk '{print $4}')
             done
-            read -p "[+] ¿Do you want to start a LDAP Domain instalation on this host?(y/n)" installoption
-            
-            configmode=$(echo $installoption | tr '[:upper:]' '[:lower:]')
-            if [ $installoption = "y" ]; then
-                sudo apt-get install slapd ldap-utils -y
-            fi
+
 
             mkdir -p /etc/lsdap/bins
-            
             touch /etc/lsdap/file.ldif
             touch /etc/lsdap/data.conf
             wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/bins/ou.sh" -O "/etc/lsdap/bins/ou.sh" 2>/dev/null
