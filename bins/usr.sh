@@ -3,7 +3,7 @@ dc1=$(cat /etc/lsdap/data.conf | grep "fqdn" | awk -F '=' '{print $2}' | awk -F 
 dc2=$(cat /etc/lsdap/data.conf | grep "fqdn" | awk -F '=' '{print $2}' | awk -F '.' '{print $3}')
 
 users=$(ldapsearch -xLLL -b "dc=$dc1,dc=$dc2" objectClass=posixAccount | grep cn: | awk '{print $2}')
-echo -e "[Name]                        [UID]"
+echo "[Name]                        [UID]"
 
 for i in $users
 do
