@@ -11,3 +11,4 @@ do
     # Usamos printf para formatear la salida
     printf "%-29s %s\n" "$i" "$gid"
 done
+echo ""
