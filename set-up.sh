@@ -155,7 +155,7 @@ ${endcolor}\n"
             wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/bins/grp.sh" -O "/etc/lsdap/bins/grp.sh" 2>/dev/null
             wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/bins/pablo.sh" -O "/etc/lsdap/bins/pablo.sh" 2>/dev/null
             wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/bins/usr.sh" -O "/etc/lsdap/bins/usr.sh" 2>/dev/null
-            wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/bins/new-ldap.sh" -O "/etc/lsdap/bins/new-lsdap.sh" 2>/dev/null
+            wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/bins/new-lsdap.sh" -O "/etc/lsdap/bins/new-lsdap.sh" 2>/dev/null
             wget "https://raw.githubusercontent.com/TFGoscar/lsdap.sh/refs/heads/main/bins/uninstall.sh" -O "/etc/lsdap/bins/uninstall-lsdap.sh" 2>/dev/null
             ln -s /etc/lsdap/bins/pablo.sh /usr/bin/lsdget
             ln -s /etc/lsdap/bins/new-lsdap.sh /usr/bin/lsdnew
