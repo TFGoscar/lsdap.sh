@@ -2,7 +2,7 @@
 # ROOT CHECK
     whoami=$(whoami)
     if [ "$whoami" != "root" ]; then
-        echo "[!] YOU MUST RUN THIS SCRIPT LIKE ROOT. [!]"
+        echo "set-up.sh: access denied"
         echo ""
         exit
     fi
